@@ -25,9 +25,9 @@ void Elevator::addRequest(const Request& request) {
     floorsToVisit[request.getDestinationFloor()] = true;
     
     if (direction == Direction::IDLE) {
-        if (request.getDestinationFloor() > currentFloor) {
+        if (request.getSourceFloor() > currentFloor) {
             direction = Direction::UP;
-        } else if (request.getDestinationFloor() < currentFloor) {
+        } else if (request.getSourceFloor() < currentFloor) {
             direction = Direction::DOWN;
         }
     }
